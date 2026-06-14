@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-public-outputs.mjs",
     "build": "next build",
     "start": "next start"
   },

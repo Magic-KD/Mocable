@@ -5,6 +5,7 @@ node_modules/
 out/
 dist/
 build/
+public/outputs/
 *.log
 .DS_Store
 Thumbs.db
