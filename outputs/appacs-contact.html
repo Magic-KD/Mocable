@@ -1,0 +1,795 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APPACS Contact Page | USB Cable Manufacturer in Shenzhen</title>
+  <meta
+    name="description"
+    content="Contact APPACS in Shenzhen for OEM/ODM USB cable projects, factory communication, quotation requests and business cooperation."
+  />
+  <style>
+    :root {
+      --green: #19b85a;
+      --green-2: #30e47f;
+      --green-soft: rgba(48, 228, 127, 0.12);
+      --dark: #06100c;
+      --dark-2: #0c1713;
+      --panel: rgba(9, 20, 16, 0.78);
+      --panel-2: rgba(255, 255, 255, 0.06);
+      --line: rgba(255, 255, 255, 0.14);
+      --text: #eef8f2;
+      --muted: rgba(238, 248, 242, 0.68);
+      --danger: #ff7272;
+      --success: #5de18c;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(48, 228, 127, 0.14), transparent 30%),
+        linear-gradient(180deg, #07110d, #08130f 36%, #050907 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .nav {
+      width: min(1180px, calc(100% - 48px));
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 0 18px 0 22px;
+      background: rgba(7, 17, 13, 0.72);
+      color: #fff;
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+      margin: 14px auto -88px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px) saturate(140%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 7px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    .nav-links > a {
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 13px;
+      border-radius: 999px;
+    }
+
+    .nav-links > a:hover {
+      background: rgba(255, 255, 255, 0.09);
+      color: #fff;
+    }
+
+    .quote {
+      padding: 13px 21px;
+      background: var(--green);
+      color: #041008;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    .hero {
+      padding: 164px 62px 74px;
+      background:
+        linear-gradient(110deg, rgba(6, 16, 12, 0.96), rgba(6, 16, 12, 0.82) 52%, rgba(15, 93, 50, 0.44)),
+        url("../appacs-next-home/public/assets/banner.jpg") center/cover;
+    }
+
+    .hero-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: #b9ffd3;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 18px 0 0;
+      font-size: 62px;
+      line-height: 0.98;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+      max-width: 650px;
+    }
+
+    .hero-points div {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 700;
+    }
+
+    .panel,
+    .info-card {
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px) saturate(140%);
+    }
+
+    .panel {
+      padding: 30px;
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 32px;
+    }
+
+    .panel-intro {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .required {
+      color: var(--green-2);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      padding: 15px 16px;
+      font: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.42);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(48, 228, 127, 0.55);
+      box-shadow: 0 0 0 4px rgba(48, 228, 127, 0.12);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.52);
+      min-height: 16px;
+    }
+
+    .hint.error {
+      color: var(--danger);
+    }
+
+    .form-footer {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .status {
+      min-height: 22px;
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .status.success { color: var(--success); }
+    .status.error { color: var(--danger); }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: #051109;
+      padding: 16px 22px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      min-width: 190px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 16px 40px rgba(25, 184, 90, 0.25);
+    }
+
+    button:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.72;
+      cursor: wait;
+    }
+
+    .shield-note {
+      grid-column: 1 / -1;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 22px 22px 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .info-card p,
+    .info-card li {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .info-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .quote-tips {
+      margin-top: 72px;
+    }
+
+    .map-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .map-frame {
+      position: relative;
+      aspect-ratio: 1.28 / 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        radial-gradient(circle at top right, rgba(48, 228, 127, 0.16), transparent 32%),
+        rgba(255, 255, 255, 0.03);
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: saturate(1.02) contrast(1.01);
+    }
+
+    .map-overlay {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(6, 16, 12, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .map-overlay strong {
+      display: block;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .map-overlay span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .map-link {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: #041008;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .map-copy {
+      padding: 22px 22px 20px;
+    }
+
+    .map-copy p + p {
+      margin-top: 10px;
+    }
+
+    .hidden-bait {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    footer {
+      padding: 34px 62px 48px;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 13px;
+    }
+
+    .foot {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        width: calc(100% - 24px);
+        top: 10px;
+        padding: 0 12px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 146px 18px 52px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      footer {
+        padding: 24px 18px 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="appacs-homepage-long-preview.html">
+      <img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo" />
+      APPACS
+    </a>
+    <nav class="nav-links">
+      <a href="appacs-homepage-long-preview.html#products">Products</a>
+      <a href="appacs-homepage-long-preview.html#solutions">OEM/ODM</a>
+      <a href="appacs-homepage-long-preview.html#factory">Factory</a>
+      <a href="appacs-blog.html">Blog</a>
+      <a href="appacs-contact.html">Contact</a>
+    </nav>
+    <a class="quote" href="#inquiry-form">Contact APPACS</a>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <section>
+        <span class="eyebrow">Contact APPACS</span>
+        <h1>Contact APPACS for USB Cable Projects</h1>
+        <p>
+          Reach APPACS for OEM/ODM cooperation, catalog requests, factory communication and project discussions.
+          This contact page combines your inquiry form with company location details for global buyers.
+        </p>
+        <div class="hero-points">
+          <div>Direct contact for wholesale and OEM/ODM requests</div>
+          <div>Clear fields for quantity, market and product direction</div>
+          <div>Company address and map for easier buyer verification</div>
+          <div>Email and phone validation for better lead quality</div>
+        </div>
+
+        <div class="info-card quote-tips">
+          <h3>Recommended for Faster Quotation</h3>
+          <ul>
+            <li>Target quantity or MOQ expectation</li>
+            <li>Product type, cable length and connector direction</li>
+            <li>Custom logo, packaging or retail box requirement</li>
+            <li>Destination market and expected delivery timeline</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel" id="inquiry-form">
+        <h2>Contact Form</h2>
+        <p class="panel-intro">
+          Required fields are clearly marked. Fill in the core contact details first, then add company,
+          country and project notes if available.
+        </p>
+
+        <form id="appacsInquiryForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name <span class="required">Required</span></label>
+            <input id="name" name="name" type="text" placeholder="e.g. David Chen" />
+            <div class="hint" data-error-for="name">Please enter your full name.</div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="required">Required</span></label>
+            <input id="email" name="email" type="email" placeholder="e.g. purchasing@company.com" />
+            <div class="hint" data-error-for="email">Enter a valid business email address.</div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span class="required">Required</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="e.g. +971 50 123 4567" />
+            <div class="hint" data-error-for="phone">Use an international format if possible, such as +1 or +44.</div>
+          </div>
+
+          <div class="field">
+            <label for="company">Company Name</label>
+            <input id="company" name="company" type="text" placeholder="e.g. Global Mobile Accessories LLC" />
+            <div class="hint" data-error-for="company">Optional: helps us understand your business type.</div>
+          </div>
+
+          <div class="field">
+            <label for="region">Country / Region</label>
+            <input id="region" name="region" type="text" placeholder="e.g. UAE, Germany, Nigeria" />
+            <div class="hint" data-error-for="region">Optional: tell us where the project is shipping.</div>
+          </div>
+
+          <div class="field">
+            <label for="productNeed">Product Requirement</label>
+            <input id="productNeed" name="productNeed" type="text" placeholder="e.g. 3-in-1 cable, USB-C cable, custom logo packaging" />
+            <div class="hint" data-error-for="productNeed">Optional: share the main product direction.</div>
+          </div>
+
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us your quantity, target market, connector type, wattage, packaging or timeline."></textarea>
+            <div class="hint" data-error-for="message">Optional: the more project detail you add, the easier it is to quote accurately.</div>
+          </div>
+
+          <div class="hidden-bait" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <input id="startedAt" name="startedAt" type="hidden" />
+
+          <div class="shield-note">
+            This form uses email validation, international phone validation, a hidden anti-spam field and a minimum fill-time check.
+            If you want stronger protection later, you can also add Cloudflare Turnstile or Google reCAPTCHA.
+          </div>
+
+          <div class="form-footer">
+            <button id="submitButton" type="submit">Send Inquiry</button>
+            <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </section>
+
+      <aside class="stack">
+        <div class="info-card map-card">
+          <div class="map-frame">
+            <iframe
+              title="APPACS company location map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=114.0179%2C22.6065%2C114.0319%2C22.6198&amp;layer=mapnik&amp;marker=22.6129%2C114.0249"
+            ></iframe>
+            <div class="map-overlay">
+              <div>
+                <strong>APPACS Location</strong>
+                <span>Longhua Design Industry Park, Shenzhen</span>
+              </div>
+              <a
+                class="map-link"
+                href="https://www.openstreetmap.org/?mlat=22.6129&amp;mlon=114.0249#map=16/22.6129/114.0249"
+                target="_blank"
+                rel="noreferrer"
+              >Open Map</a>
+            </div>
+          </div>
+          <div class="map-copy">
+            <h3>Company Address</h3>
+            <p>Building 1, Headquarters Building, Longhua Design Industry Park, Longhua District, Shenzhen, China</p>
+            <p>Map view uses OpenStreetMap and is placed around the Shenzhen North / Longhua business area for quick buyer reference.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="foot">
+      APPACS B2B inquiry form template. Built for OEM/ODM USB cable projects, fast charging cable sourcing and wholesale buyer lead capture.
+    </div>
+  </footer>
+
+  <script>
+    const FORM_ENDPOINT = "/api/inquiry";
+    const MIN_FILL_TIME_MS = 3000;
+
+    const form = document.getElementById("appacsInquiryForm");
+    const statusNode = document.getElementById("formStatus");
+    const submitButton = document.getElementById("submitButton");
+    const startedAtInput = document.getElementById("startedAt");
+
+    startedAtInput.value = String(Date.now());
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const phonePattern = /^\+?[0-9\s\-().]{7,20}$/;
+
+    const fieldConfig = {
+      name: {
+        required: true,
+        message: "Please enter your full name."
+      },
+      email: {
+        required: true,
+        message: "Please enter a valid email address.",
+        validator: (value) => emailPattern.test(value)
+      },
+      phone: {
+        required: true,
+        message: "Please enter a valid phone number.",
+        validator: (value) => phonePattern.test(value)
+      }
+    };
+
+    function setStatus(message, type) {
+      statusNode.textContent = message;
+      statusNode.className = "status" + (type ? " " + type : "");
+    }
+
+    function setFieldError(name, message) {
+      const errorNode = document.querySelector('[data-error-for="' + name + '"]');
+      if (!errorNode) return;
+      errorNode.textContent = message;
+      errorNode.classList.add("error");
+    }
+
+    function clearFieldError(name) {
+      const errorNode = document.querySelector('[data-error-for="' + name + '"]');
+      if (!errorNode) return;
+      const fallbackMap = {
+        name: "Please enter your full name.",
+        email: "Enter a valid business email address.",
+        phone: "Use an international format if possible, such as +1 or +44.",
+        company: "Optional: helps us understand your business type.",
+        region: "Optional: tell us where the project is shipping.",
+        productNeed: "Optional: share the main product direction.",
+        message: "Optional: the more project detail you add, the easier it is to quote accurately."
+      };
+      errorNode.textContent = fallbackMap[name] || "";
+      errorNode.classList.remove("error");
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      Object.keys(fieldConfig).forEach((name) => {
+        const input = form.elements[name];
+        const value = String(input.value || "").trim();
+        const config = fieldConfig[name];
+
+        clearFieldError(name);
+
+        if (config.required && !value) {
+          setFieldError(name, config.message);
+          isValid = false;
+          return;
+        }
+
+        if (value && typeof config.validator === "function" && !config.validator(value)) {
+          setFieldError(name, config.message);
+          isValid = false;
+        }
+      });
+
+      if (!isValid) {
+        setStatus("Please complete all required fields before submitting.", "error");
+      }
+
+      return isValid;
+    }
+
+    async function submitInquiry(payload) {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage || "Submission failed.");
+      }
+
+      return response.json().catch(() => ({}));
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      setStatus("", "");
+
+      ["name", "email", "phone", "company", "region", "productNeed", "message"].forEach(clearFieldError);
+
+      if (!validateForm()) return;
+
+      const startedAt = Number(startedAtInput.value || Date.now());
+      const fillTime = Date.now() - startedAt;
+      const honeypotValue = String(form.elements.website.value || "").trim();
+
+      if (honeypotValue) {
+        setStatus("Spam protection triggered. Please refresh and try again.", "error");
+        return;
+      }
+
+      if (fillTime < MIN_FILL_TIME_MS) {
+        setStatus("Please review your details for a moment before submitting.", "error");
+        return;
+      }
+
+      const payload = {
+        name: form.elements.name.value.trim(),
+        email: form.elements.email.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        company: form.elements.company.value.trim(),
+        region: form.elements.region.value.trim(),
+        productNeed: form.elements.productNeed.value.trim(),
+        message: form.elements.message.value.trim(),
+        meta: {
+          source: "appacs-inquiry-form",
+          fillTimeMs: fillTime,
+          userAgent: navigator.userAgent
+        }
+      };
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        await submitInquiry(payload);
+        form.reset();
+        startedAtInput.value = String(Date.now());
+        setStatus("Inquiry submitted successfully. We will reply as soon as possible.", "success");
+      } catch (error) {
+        setStatus(error.message || "Submission failed. Please try again later.", "error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Inquiry";
+      }
+    });
+  </script>
+</body>
+</html>
