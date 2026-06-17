@@ -3,7 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>APPACS Homepage Long Preview</title>
+  <title>Mocable | OEM/ODM USB Cable Manufacturer for Global Buyers</title>
+  <meta name="description" content="Mocable by APPACS is an OEM/ODM USB cable manufacturer supplying USB-C cables, Lightning cables, adapter cables and multi-function charging cables for global B2B buyers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.mocable.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mocable | OEM/ODM USB Cable Manufacturer" />
+  <meta property="og:description" content="Factory-direct USB cable manufacturing, OEM/ODM packaging, sample support and QC inspection for global importers and private label buyers." />
+  <meta property="og:url" content="https://www.mocable.com/" />
+  <meta property="og:image" content="https://www.mocable.com/outputs/assets/factory-photo-appacs.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Mocable",
+    "alternateName": "APPACS",
+    "url": "https://www.mocable.com/",
+    "logo": "https://www.mocable.com/appacs-next-home/public/assets/company-logo.jpg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-159-2002-6822",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Chinese"]
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mocable",
+    "url": "https://www.mocable.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.mocable.com/outputs/appacs-blog.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
   <style>
     :root {
       --green: #19b85a;
@@ -147,25 +186,28 @@
     }
     .mega-list {
       display: grid;
-      gap: 8px;
+      gap: 10px;
     }
     .mega-link {
       display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 11px;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
       align-items: center;
-      padding: 10px;
-      border-radius: 12px;
+      padding: 11px 38px 11px 11px;
+      border-radius: 16px;
       position: relative;
-      transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(16, 45, 28, .08);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(245,249,247,.94));
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
     .mega-link:hover {
-      background: #eef6f1;
+      background: linear-gradient(180deg, #f4fbf7, #edf7f1);
+      border-color: rgba(25, 184, 90, .28);
       transform: translateX(3px);
-      box-shadow: inset 3px 0 0 #19b85a;
+      box-shadow: 0 10px 26px rgba(7, 20, 13, .08), inset 3px 0 0 #19b85a;
     }
     .mega-link::after {
-      content: "鈫?;
+      content: ">";
       position: absolute;
       right: 12px;
       top: 50%;
@@ -179,21 +221,65 @@
       opacity: 1;
       transform: translate(0, -50%);
     }
-    .mega-icon {
-      width: 34px;
-      height: 34px;
+    .mega-icon,
+    .mega-thumb {
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
-      border-radius: 10px;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .mega-icon {
       color: #0a9f48;
-      background: #e4f8ec;
+      background:
+        radial-gradient(circle at top, rgba(37, 214, 108, .22), transparent 60%),
+        linear-gradient(180deg, #eef9f2, #dcf3e5);
       border: 1px solid #c6efd5;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .mega-thumb {
+      position: relative;
+      border: 1px solid rgba(18, 59, 37, .12);
+      background: #e8efea;
+      box-shadow: 0 8px 18px rgba(9, 18, 14, .08);
+    }
+    .mega-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mega-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 17, 13, .05), rgba(7, 17, 13, .28));
+    }
+    .mega-thumb b {
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      z-index: 1;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: rgba(7, 17, 13, .72);
+      color: #f6fff8;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .mega-copy {
+      min-width: 0;
     }
     .mega-link strong {
       display: block;
       font-size: 14px;
     }
-    .mega-link span {
+    .mega-copy span {
       display: block;
       margin-top: 3px;
       color: #69756f;
@@ -232,12 +318,145 @@
       font-size: 13px;
       line-height: 1.45;
     }
+    .lang-switcher {
+      position: relative;
+      flex-shrink: 0;
+      z-index: 40;
+    }
+    .lang-toggle {
+      min-width: 52px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.92);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+      backdrop-filter: blur(10px);
+    }
+    .lang-toggle:hover,
+    .lang-switcher.open .lang-toggle {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border-color: rgba(48,228,127,.42);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.18);
+    }
+    .lang-globe {
+      font-size: 15px;
+      line-height: 1;
+    }
+    .lang-current {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 214px;
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background: rgba(8,16,13,.94);
+      box-shadow: 0 24px 58px rgba(0,0,0,.32);
+      backdrop-filter: blur(20px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+    .lang-menu::before {
+      content: "";
+      position: absolute;
+      top: -18px;
+      right: 0;
+      width: 100%;
+      height: 18px;
+    }
+    .lang-switcher.open .lang-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      color: rgba(255,255,255,.86);
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .lang-item small {
+      color: rgba(255,255,255,.44);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-item:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      transform: translateX(2px);
+    }
+    .lang-item.is-active {
+      background: rgba(25,184,90,.18);
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(48,228,127,.28);
+    }
+    .lang-item.is-active small {
+      color: var(--green-2, #30e47f);
+    }
+    html[dir="rtl"] .lang-menu {
+      right: auto;
+      left: 0;
+    }
+    html[dir="rtl"] .lang-item:hover {
+      transform: translateX(-2px);
+    }
+    @media (max-width: 900px) {
+      .lang-toggle {
+        width: 42px;
+        min-width: 42px;
+        padding: 0;
+      }
+      .lang-current {
+        display: none;
+      }
+      .lang-menu {
+        min-width: min(220px, calc(100vw - 32px));
+      }
+    }
     .quote {
       padding: 13px 21px;
       background: var(--green);
       color: #041008;
       border-radius: 6px;
       font-weight: 800;
+      box-shadow: 0 14px 34px rgba(31,211,116,.18);
+      transition: background .22s ease, color .22s ease, transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .quote:hover,
+    .quote:focus-visible {
+      background: #35ee8a;
+      color: #02100a;
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(31,211,116,.32);
     }
     .hero {
       min-height: 650px;
@@ -306,9 +525,26 @@
       border-radius: 6px;
       font-weight: 850;
       text-align: center;
+      transition: background .22s ease, color .22s ease, transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
     .btn.primary { background: var(--green-2); color: #031008; }
     .btn.secondary { border: 1px solid rgba(255,255,255,.42); color: #fff; }
+    .btn.primary:hover,
+    .btn.primary:focus-visible {
+      background: rgba(0, 0, 0, .9);
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1px var(--green), 0 20px 44px rgba(10, 20, 15, .32);
+    }
+    .btn.secondary:hover,
+    .btn.secondary:focus-visible {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(48,228,127,.72);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.2);
+    }
     .proof-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -322,6 +558,13 @@
     .proof-row strong { display: block; font-size: 24px; color: #fff; }
     .proof-row span { display: block; margin-top: 5px; color: rgba(255,255,255,.65); font-size: 13px; }
     section { padding: 78px 0; }
+    main > section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 900px; }
+    .category-section {
+      padding-bottom: 54px;
+    }
+    #products {
+      padding-top: 54px;
+    }
     .center { text-align: center; max-width: 760px; margin: 0 auto 38px; }
     h2 { margin: 0; font-size: 42px; line-height: 1.08; }
     .center p, .lead { color: var(--muted); line-height: 1.65; font-size: 16px; }
@@ -443,7 +686,8 @@
       color: var(--green);
     }
     .about-appacs {
-      padding-top: 10px;
+      padding-top: 78px;
+      padding-bottom: 74px;
       background: #07110d;
       color: #fff;
     }
@@ -451,6 +695,7 @@
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
+      margin-top: 36px;
     }
     .about-card {
       padding: 34px 26px 30px;
@@ -485,6 +730,33 @@
     }
     .about-appacs .center p {
       color: rgba(255,255,255,.68);
+    }
+    .global-market {
+      margin-top: 38px;
+      padding: 28px 30px 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(45,255,144,.12), transparent 42%),
+        rgba(255,255,255,.035);
+      box-shadow: 0 24px 70px rgba(0,0,0,.18);
+      overflow: hidden;
+    }
+    .global-market img {
+      display: block;
+      width: min(100%, 1120px);
+      margin: 0 auto;
+      height: auto;
+      opacity: .92;
+      filter: drop-shadow(0 22px 34px rgba(0,0,0,.28));
+    }
+    .global-market-caption {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: .02em;
     }
     h3 { margin: 0; font-size: 21px; }
     .product-card p, .app-card p, .seo-card p, .faq-card p { color: var(--muted); line-height: 1.6; }
@@ -549,22 +821,111 @@
     }
     .application-grid { grid-template-columns: repeat(4, 1fr); }
     .app-card { min-height: 210px; padding: 26px; }
-    .market-band {
-      background: linear-gradient(135deg,#e8f2ed,#fff);
+    .customer-case-grid {
+      gap: 18px;
     }
-    .market-band-inner {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 44px;
-      align-items: center;
-    }
-    .market-tags { display: flex; flex-wrap: wrap; gap: 12px; }
-    .market-tags span {
-      padding: 15px 18px;
-      border-radius: 6px;
+    .case-card {
       background: #fff;
       border: 1px solid var(--line);
-      font-weight: 800;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 22px 58px rgba(6,16,12,.08);
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+    .case-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 70px rgba(6,16,12,.12);
+      border-color: rgba(22,199,105,.25);
+    }
+    .case-visual {
+      min-height: 132px;
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(45,255,144,.38), transparent 30%),
+        linear-gradient(145deg, rgba(5,18,13,.95), rgba(9,54,35,.9));
+    }
+    .case-visual::before,
+    .case-visual::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      opacity: .75;
+    }
+    .case-visual::before {
+      width: 138px;
+      height: 138px;
+      right: -36px;
+      top: -38px;
+    }
+    .case-visual::after {
+      width: 92px;
+      height: 92px;
+      right: 34px;
+      bottom: -44px;
+    }
+    .case-visual span {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .case-copy {
+      padding: 22px 22px 24px;
+    }
+    .case-meta {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .case-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+    .case-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .case-results {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .case-results div {
+      padding: 12px;
+      border-radius: 12px;
+      background: #f4f8f5;
+      border: 1px solid var(--line);
+    }
+    .case-results strong {
+      display: block;
+      color: var(--dark);
+      font-size: 18px;
+      line-height: 1;
+    }
+    .case-results span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
     }
     .seo-grid { grid-template-columns: repeat(3, 1fr); }
     .seo-card { padding: 24px; background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.13); }
@@ -573,27 +934,119 @@
       display: grid;
       grid-template-columns: repeat(4,1fr);
       gap: 18px;
-      text-align: center;
+      text-align: left;
     }
-    .quality div {
-      padding: 34px 20px;
+    .quality-card {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      font-size: 30px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(6,16,12,.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+    .quality-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 62px rgba(6,16,12,.12);
+      border-color: rgba(22,199,105,.24);
+    }
+    .quality-image {
+      height: 230px;
+      padding: 20px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(22,199,105,.12), transparent 32%),
+        #f6f9f7;
+      border-bottom: 1px solid var(--line);
+    }
+    .quality-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 22px rgba(6,16,12,.12));
+    }
+    .quality-copy {
+      padding: 20px 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: center;
+      align-items: center;
+    }
+    .quality-copy strong {
+      display: block;
+      color: var(--dark);
+      font-size: 28px;
+      line-height: 1;
       font-weight: 900;
     }
-    .quality span { display: block; margin-top: 10px; font-size: 14px; color: var(--muted); }
+    .quality-copy span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 330px;
+    }
+    @media (min-width: 1025px) {
+      .quality-image img {
+        max-height: 188px;
+      }
+    }
     .faq-form {
       background: #f5f8f6;
+      padding: 68px 0 86px;
     }
     .faq-form-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 52px;
     }
-    .faq-list { display: grid; gap: 12px; }
-    .faq-card { padding: 20px; }
+    .faq-list { display: grid; gap: 14px; margin-top: 18px; }
+    .faq-card {
+      display: block;
+      padding: 22px 20px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(18, 59, 37, .12);
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(240,246,242,.96));
+      box-shadow: 0 14px 34px rgba(11, 28, 19, .08);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .faq-card:hover,
+    .faq-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(25, 184, 90, .36);
+      background: linear-gradient(180deg, rgba(247, 252, 249, 1), rgba(236, 245, 240, 1));
+      box-shadow: 0 18px 40px rgba(11, 28, 19, .12);
+    }
+    .faq-card h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .faq-card p {
+      margin: 12px 0 0;
+      color: #66746d;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .faq-card span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 850;
+    }
+    .faq-card span::after {
+      content: ">";
+      font-weight: 900;
+    }
     form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     input, textarea {
       width: 100%;
@@ -611,6 +1064,14 @@
       padding: 15px 18px;
       font-weight: 850;
       cursor: pointer;
+      transition: background .22s ease, color .22s ease, transform .22s ease, box-shadow .22s ease;
+    }
+    button:hover,
+    button:focus-visible {
+      background: #35ee8a;
+      color: #02100a;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(31,211,116,.26);
     }
     .footer-inner {
       display: grid;
@@ -635,7 +1096,7 @@
       .hero { padding: 136px 0 58px; }
       .hero h1 { font-size: 42px; }
       section { padding: 58px 0; }
-      .solution-row, .market-band-inner, .faq-form-inner { grid-template-columns: 1fr; }
+      .solution-row, .faq-form-inner { grid-template-columns: 1fr; }
       .proof-row { grid-template-columns: repeat(2,1fr); }
       form { grid-template-columns: 1fr; }
     }
@@ -673,12 +1134,14 @@
       .hero p {
         font-size: 17px;
       }
+      .global-market {
+        margin-top: 26px;
+        padding: 18px 14px;
+        border-radius: 18px;
+      }
       .actions {
         flex-direction: column;
         align-items: stretch;
-      }
-      .market-tags {
-        gap: 10px;
       }
     }
     @media (max-width: 640px) {
@@ -695,10 +1158,6 @@
       }
       .proof-row {
         grid-template-columns: 1fr;
-      }
-      .market-tags span {
-        width: 100%;
-        text-align: center;
       }
     }
     @media (max-width: 720px) {
@@ -763,7 +1222,7 @@
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="#"><img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo" />APPACS</a>
+    <a class="brand" href="#"><img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo"  decoding="async"  fetchpriority="high" />APPACS</a>
     <nav class="nav-links">
       <div class="menu-item">
         <a class="menu-trigger" href="#products">Products</a>
@@ -771,26 +1230,26 @@
           <div>
             <h4>Cable Categories</h4>
             <div class="mega-list">
-              <a class="mega-link" href="appacs-usb-c-cables.html"><span class="mega-icon">C</span><span><strong>USB-C Cables</strong><span>Fast charging and data cables for mainstream Type-C devices</span></span></a>
-              <a class="mega-link" href="appacs-lightning-cables.html"><span class="mega-icon">L</span><span><strong>Lightning Cables</strong><span>USB-A to Lightning and USB-C to Lightning options</span></span></a>
-              <a class="mega-link" href="appacs-adapter-cables.html"><span class="mega-icon">A</span><span><strong>Adapter Cables</strong><span>Multi-connector and conversion cables for travel, retail and gifts</span></span></a>
-              <a class="mega-link" href="appacs-multi-function-cables.html"><span class="mega-icon">M</span><span><strong>Multi-function Cables</strong><span>3-in-1 and multi-connector charging cables for retail and OEM/ODM projects</span></span></a>
+              <a class="mega-link" href="appacs-usb-c-cables.html"><span class="mega-thumb"><b>USB-C</b><img src="assets/categories/usb-c-cables.jpg" alt="USB-C cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>USB-C Cables</strong><span>Fast charging and data cables for mainstream Type-C devices</span></span></a>
+              <a class="mega-link" href="appacs-lightning-cables.html"><span class="mega-thumb"><b>Apple</b><img src="assets/categories/lightning-cables.jpg" alt="Lightning cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Lightning Cables</strong><span>USB-A to Lightning and USB-C to Lightning options</span></span></a>
+              <a class="mega-link" href="appacs-multi-function-cables.html"><span class="mega-thumb"><b>3-in-1</b><img src="assets/categories/multi-function-cables.jpg" alt="Multi-function cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Multi-function Cables</strong><span>3-in-1 and multi-connector charging cables for retail and OEM/ODM projects</span></span></a>
+              <a class="mega-link" href="appacs-adapter-cables.html"><span class="mega-thumb"><b>Audio</b><img src="assets/categories/adapter-cables.jpg" alt="Adapter cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Adapter Cables</strong><span>Multi-connector and conversion cables for travel, retail and gifts</span></span></a>
             </div>
           </div>
           <div>
             <h4>Featured Products</h4>
             <div class="mega-list">
-              <a class="mega-link" href="#products"><span class="mega-icon">W</span><span><strong>Watch Charging Cable</strong><span>Travel-ready cable with watch charger</span></span></a>
-              <a class="mega-link" href="#products"><span class="mega-icon">D</span><span><strong>LED Display Cable</strong><span>Real-time wattage display for premium SKUs</span></span></a>
-              <a class="mega-link" href="#products"><span class="mega-icon">P</span><span><strong>Private Label Cable</strong><span>Logo, color, length and retail packaging</span></span></a>
+              <a class="mega-link" href="#products"><span class="mega-icon">W</span><span class="mega-copy"><strong>Watch Charging Cable</strong><span>Travel-ready cable with watch charger</span></span></a>
+              <a class="mega-link" href="#products"><span class="mega-icon">D</span><span class="mega-copy"><strong>LED Display Cable</strong><span>Real-time wattage display for premium SKUs</span></span></a>
+              <a class="mega-link" href="#products"><span class="mega-icon">P</span><span class="mega-copy"><strong>Private Label Cable</strong><span>Logo, color, length and retail packaging</span></span></a>
             </div>
           </div>
           <div>
             <h4>OEM/ODM Services</h4>
             <div class="mega-list">
-              <a class="mega-link" href="#solutions"><span class="mega-icon">O</span><span><strong>Custom Project</strong><span>Sample, MOQ, packaging and quotation flow</span></span></a>
-              <a class="mega-link" href="#factory"><span class="mega-icon">Q</span><span><strong>Quality Control</strong><span>Factory proof, inspection and shipment support</span></span></a>
-              <a class="mega-link" href="appacs-inquiry-form.html"><span class="mega-icon">G</span><span><strong>Buyer Guides</strong><span>Procurement questions and catalog request support</span></span></a>
+              <a class="mega-link" href="#solutions"><span class="mega-icon">O</span><span class="mega-copy"><strong>Custom Project</strong><span>Sample, MOQ, packaging and quotation flow</span></span></a>
+              <a class="mega-link" href="#factory"><span class="mega-icon">Q</span><span class="mega-copy"><strong>Quality Control</strong><span>Factory proof, inspection and shipment support</span></span></a>
+              <a class="mega-link" href="appacs-inquiry-form.html"><span class="mega-icon">G</span><span class="mega-copy"><strong>Buyer Guides</strong><span>Procurement questions and catalog request support</span></span></a>
             </div>
           </div>
           <a class="mega-feature" href="appacs-inquiry-form.html">
@@ -802,16 +1261,30 @@
       <a href="#solutions">OEM/ODM</a>
       <a href="#factory">Factory</a>
       <a href="appacs-blog.html">Blog</a>
-      <a href="appacs-contact.html">Contact</a>
+      <a href="appacs-faq.html">FAQ</a><a href="appacs-contact.html">Contact</a>
     </nav>
+            <div class="lang-switcher" data-language-switcher>
+      <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+        <span class="lang-globe" aria-hidden="true">&#127760;</span>
+        <span class="lang-current">EN</span>
+      </button>
+      <div class="lang-menu" role="menu" aria-label="Language selector">
+        <a class="lang-item" data-lang="en" href="/en/" role="menuitem"><span>English</span><small>EN</small></a>
+        <a class="lang-item" data-lang="es" href="/es/" role="menuitem"><span>Espa&ntilde;ol</span><small>ES</small></a>
+        <a class="lang-item" data-lang="ru" href="/ru/" role="menuitem"><span>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span><small>RU</small></a>
+        <a class="lang-item" data-lang="ar" href="/ar/" role="menuitem"><span>&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span><small>AR</small></a>
+        <a class="lang-item" data-lang="fr" href="/fr/" role="menuitem"><span>Fran&ccedil;ais</span><small>FR</small></a>
+        <a class="lang-item" data-lang="pt" href="/pt/" role="menuitem"><span>Portugu&ecirc;s</span><small>PT</small></a>
+      </div>
+    </div>
     <a class="quote" href="appacs-inquiry-form.html">Get a Quote</a>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-media" aria-hidden="true">
-        <video class="hero-video" autoplay muted loop playsinline poster="../appacs-next-home/public/assets/banner.jpg">
-          <source src="assets/homepage/appacs-hero-banner.mp4" type="video/mp4" />
+        <video class="hero-video" autoplay muted loop playsinline preload="none" poster="../appacs-next-home/public/assets/banner.jpg">
+          <source data-src="assets/homepage/appacs-hero-banner.mp4" type="video/mp4" />
         </video>
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -833,7 +1306,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="category-section">
       <div class="center container-main">
         <h2>Our Product Categories</h2>
         <p>Build the homepage around clear product entries so buyers can quickly find the right cable series.</p>
@@ -841,8 +1314,8 @@
       <div class="category-grid container-main">
         <a class="category-card usb-c" href="appacs-usb-c-cables.html"><span><em>Category 01</em><strong>USB-C Cables</strong></span></a>
         <a class="category-card lightning" href="appacs-lightning-cables.html"><span><em>Category 02</em><strong>Lightning Cables</strong></span></a>
-        <a class="category-card adapter" href="appacs-adapter-cables.html"><span><em>Category 03</em><strong>Adapter Cables</strong></span></a>
-        <a class="category-card multi-function" href="appacs-multi-function-cables.html"><span><em>Category 04</em><strong>Multi-function Cables</strong></span></a>
+        <a class="category-card multi-function" href="appacs-multi-function-cables.html"><span><em>Category 03</em><strong>Multi-function Cables</strong></span></a>
+        <a class="category-card adapter" href="appacs-adapter-cables.html"><span><em>Category 04</em><strong>Adapter Cables</strong></span></a>
       </div>
     </section>
 
@@ -852,10 +1325,10 @@
         <p>These first products match the provided APPACS photos and should become priority product detail pages.</p>
       </div>
       <div class="product-grid container-main">
-        <article class="product-card"><a class="product-image-link" href="appacs-product-detail-template.html"><img src="../appacs-next-home/public/assets/u87-3in1.jpg" alt="U87-3in1 charging cable" /></a><div><h3><a href="appacs-product-detail-template.html">U87-3in1</a></h3><p>3-in-1 braided fast charging cable for multi-device wholesale and OEM programs.</p></div></article>
-        <article class="product-card"><a class="product-image-link" href="appacs-product-u87d-led-display-cable.html"><img src="../appacs-next-home/public/assets/u87d-display.jpg" alt="U87D LED Display Charging Cable" /></a><div><h3><a href="appacs-product-u87d-led-display-cable.html">U87D LED Display Charging Cable</a></h3><p>Real-time power display cable for premium retail lines and private label projects.</p></div></article>
-        <article class="product-card"><a class="product-image-link" href="appacs-product-u87-cw100w-watch-charging-cable.html"><img src="../appacs-next-home/public/assets/u87-watch.jpg" alt="U87-CW100W Watch Charging Cable" /></a><div><h3><a href="appacs-product-u87-cw100w-watch-charging-cable.html">U87-CW100W Watch Charging Cable</a></h3><p>Watch charging cable with multi-device support for travel, gifts and bundle programs.</p></div></article>
-        <article class="product-card"><a class="product-image-link" href="appacs-product-u87t-cc-coiled-usb-c-cable.html"><img src="assets/products/u87t-cc-coiled-usb-c-cable/main-1.jpg" alt="U87T-CC Coiled USB-C Cable" /></a><div><h3><a href="appacs-product-u87t-cc-coiled-usb-c-cable.html">U87T-CC Coiled USB-C Cable</a></h3><p>Coiled USB-C cable for differentiated accessory lines, travel use and OEM packaging projects.</p></div></article>
+        <article class="product-card"><a class="product-image-link" href="appacs-product-detail-template.html"><img src="../appacs-next-home/public/assets/u87-3in1.jpg" alt="U87-3in1 charging cable"  decoding="async"  loading="lazy" /></a><div><h3><a href="appacs-product-detail-template.html">U87-3in1</a></h3><p>3-in-1 braided fast charging cable for multi-device wholesale and OEM programs.</p></div></article>
+        <article class="product-card"><a class="product-image-link" href="appacs-product-u87d-led-display-cable.html"><img src="../appacs-next-home/public/assets/u87d-display.jpg" alt="U87D LED Display Charging Cable"  decoding="async"  loading="lazy" /></a><div><h3><a href="appacs-product-u87d-led-display-cable.html">U87D LED Display Charging Cable</a></h3><p>Real-time power display cable for premium retail lines and private label projects.</p></div></article>
+        <article class="product-card"><a class="product-image-link" href="appacs-product-u87-cw100w-watch-charging-cable.html"><img src="../appacs-next-home/public/assets/u87-watch.jpg" alt="U87-CW100W Watch Charging Cable"  decoding="async"  loading="lazy" /></a><div><h3><a href="appacs-product-u87-cw100w-watch-charging-cable.html">U87-CW100W Watch Charging Cable</a></h3><p>Watch charging cable with multi-device support for travel, gifts and bundle programs.</p></div></article>
+        <article class="product-card"><a class="product-image-link" href="appacs-product-u87t-cc-coiled-usb-c-cable.html"><img src="assets/products/u87t-cc-coiled-usb-c-cable/main-1.jpg" alt="U87T-CC Coiled USB-C Cable"  decoding="async"  loading="lazy" /></a><div><h3><a href="appacs-product-u87t-cc-coiled-usb-c-cable.html">U87T-CC Coiled USB-C Cable</a></h3><p>Coiled USB-C cable for differentiated accessory lines, travel use and OEM packaging projects.</p></div></article>
       </div>
     </section>
 
@@ -882,6 +1355,10 @@
           <div class="about-label">Countries</div>
         </article>
       </div>
+      <div class="global-market container-main">
+        <img src="assets/homepage/global-market.png" alt="APPACS global market coverage map for USB cable buyers"  decoding="async"  loading="lazy" />
+        <p class="global-market-caption">APPACS supports USB cable buyers across Europe, North America, South America, the Middle East, Africa and Asia-Pacific markets.</p>
+      </div>
     </section>
 
     <section class="dark" id="solutions">
@@ -891,28 +1368,28 @@
       </div>
       <div class="icon-grid container-main">
         <div>
-          <img class="advantage-image" src="assets/advantages/advantage-oem-odm.png" alt="APPACS OEM and ODM cable customization service" />
+          <img class="advantage-image" src="assets/advantages/advantage-oem-odm.jpg" alt="APPACS OEM and ODM cable customization service"  decoding="async"  loading="lazy" />
           <div class="advantage-copy">
             <h3>OEM/ODM Service</h3>
             <p class="lead">Custom logo, color, length, connectors and retail packaging.</p>
           </div>
         </div>
         <div>
-          <img class="advantage-image" src="assets/advantages/advantage-sample-support.png" alt="APPACS USB cable sample support kit" />
+          <img class="advantage-image" src="assets/advantages/advantage-sample-support.jpg" alt="APPACS USB cable sample support kit"  decoding="async"  loading="lazy" />
           <div class="advantage-copy">
             <h3>Sample Support</h3>
             <p class="lead">Help buyers verify quality before placing bulk orders.</p>
           </div>
         </div>
         <div>
-          <img class="advantage-image" src="assets/advantages/advantage-quality-control.png" alt="APPACS cable quality control testing station" />
+          <img class="advantage-image" src="assets/advantages/advantage-quality-control.jpg" alt="APPACS cable quality control testing station"  decoding="async"  loading="lazy" />
           <div class="advantage-copy">
             <h3>Quality Control</h3>
             <p class="lead">Appearance, charging and packing checks before shipment.</p>
           </div>
         </div>
         <div>
-          <img class="advantage-image" src="assets/advantages/advantage-global-response.png" alt="APPACS global buyer response and export support" />
+          <img class="advantage-image" src="assets/advantages/advantage-global-response.jpg" alt="APPACS global buyer response and export support"  decoding="async"  loading="lazy" />
           <div class="advantage-copy">
             <h3>Global Response</h3>
             <p class="lead">Quote by country, product requirement and target quantity.</p>
@@ -923,52 +1400,84 @@
 
     <section class="dark" id="factory">
       <div class="solution-row container-main">
-        <div class="factory-img"><img src="assets/factory-photo-appacs.png" alt="APPACS USB cable factory production and quality inspection scene" /></div>
+        <div class="factory-img"><img src="assets/factory-photo-appacs.jpg" alt="APPACS USB cable factory production and quality inspection scene"  decoding="async"  loading="lazy" /></div>
         <div>
-          <h2>Factory Strength, Built for B2B Trust</h2>
-          <p class="lead">Use real workshop, QC, exhibition, team and shipment images to support the site. Avoid fake customer logos or unsupported certification claims.</p>
+          <h2>In-house USB Cable Production and QC Control</h2>
+          <p class="lead">APPACS supports repeat B2B cable orders with sample preparation, connector assembly, charging performance checks, packaging follow-up and pre-shipment inspection for OEM/ODM projects.</p>
           <div class="process-grid">
-            <div><h3>Requirement</h3><p class="lead">Confirm market, quantity, connector and package.</p></div>
-            <div><h3>Sample</h3><p class="lead">Prepare sample direction and quotation tiers.</p></div>
-            <div><h3>Production</h3><p class="lead">Follow up logo, packaging and mass production.</p></div>
-            <div><h3>Delivery</h3><p class="lead">Support inspection, packing and shipping communication.</p></div>
+            <div><h3>Sample Making</h3><p class="lead">Confirm connector type, cable length, material, logo and packaging before bulk production.</p></div>
+            <div><h3>Assembly Line</h3><p class="lead">Organized cable assembly, molding, braided cable handling and appearance control.</p></div>
+            <div><h3>Charging Test</h3><p class="lead">Check charging stability, output performance and key details before packing.</p></div>
+            <div><h3>Shipment QC</h3><p class="lead">Review product appearance, labels, cartons and export packing before delivery.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="applications" id="applications">
+    <section class="applications customer-cases" id="applications">
       <div class="center container-main">
-        <h2>Applications</h2>
-        <p>Application pages help buyers recognize their purchasing scenario and create long-tail SEO entries.</p>
+        <h2>Customer Cases</h2>
+        <p>Selected B2B project scenarios showing how APPACS supports importers, private label brands and wholesale cable programs.</p>
       </div>
-      <div class="application-grid container-main">
-        <article class="app-card"><h3>Importers</h3><p>Stable cable SKUs for regional wholesale and retail channels.</p></article>
-        <article class="app-card"><h3>Private Label Brands</h3><p>Logo, color and package customization for brand owners.</p></article>
-        <article class="app-card"><h3>Promotional Gifts</h3><p>Custom cable sets for events, campaigns and corporate programs.</p></article>
-        <article class="app-card"><h3>E-commerce Sellers</h3><p>Fast-moving charging accessories with clear product visuals.</p></article>
-      </div>
-    </section>
-
-    <section class="market-band">
-      <div class="container-main market-band-inner">
-        <div>
-          <h2>Market Landing Page Plan</h2>
-          <p class="lead">Start with one English global site, then publish country landing pages for high-intent supplier searches.</p>
-        </div>
-        <div class="market-tags">
-          <span>Russia</span><span>Europe</span><span>America</span><span>South America</span><span>Middle East</span><span>Southeast Asia</span>
-        </div>
+      <div class="application-grid customer-case-grid container-main">
+        <article class="case-card">
+          <div class="case-visual"><span>Retail Brand</span></div>
+          <div class="case-copy">
+            <p class="case-meta">Europe / Private Label</p>
+            <h3>USB-C Cable Line for a Retail Accessory Brand</h3>
+            <p>Developed a braided USB-C cable range with logo marking, retail packaging direction and sample confirmation before bulk production.</p>
+            <div class="case-results"><div><strong>12 SKUs</strong><span>cable range</span></div><div><strong>Logo</strong><span>customized</span></div></div>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-visual"><span>Distributor</span></div>
+          <div class="case-copy">
+            <p class="case-meta">Middle East / Wholesale</p>
+            <h3>Fast Charging Cable Supply for Regional Distributors</h3>
+            <p>Matched 60W and 100W cable models for different channels, with export packing checks and stable repeat-order communication.</p>
+            <div class="case-results"><div><strong>60W/100W</strong><span>options</span></div><div><strong>QC</strong><span>before shipment</span></div></div>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-visual"><span>Gift Project</span></div>
+          <div class="case-copy">
+            <p class="case-meta">South America / Promotion</p>
+            <h3>Multi-function Cable Bundle for Campaign Gifts</h3>
+            <p>Prepared 3-in-1 cable samples for travel and event kits, including connector selection, color review and packaging suggestions.</p>
+            <div class="case-results"><div><strong>3-in-1</strong><span>connector set</span></div><div><strong>Samples</strong><span>reviewed</span></div></div>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-visual"><span>E-commerce</span></div>
+          <div class="case-copy">
+            <p class="case-meta">North America / Online Retail</p>
+            <h3>Product Visual and Packaging Support for Online Sellers</h3>
+            <p>Supported model selection, product image planning and carton labeling details for sellers building fast-moving cable listings.</p>
+            <div class="case-results"><div><strong>Fast</strong><span>SKU setup</span></div><div><strong>Clear</strong><span>packing details</span></div></div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section>
-      <div class="center container-main"><h2>Certified Quality You Can Trust</h2><p>Only show certifications that APPACS can verify with real documents.</p></div>
+      <div class="center container-main"><h2>Certified Quality You Can Trust</h2><p>Verified certification documents support APPACS cable export, material compliance and factory quality management.</p></div>
       <div class="quality container-main">
-        <div>CE<span>Compliance Ready</span></div>
-        <div>RoHS<span>Material Compliance</span></div>
-        <div>QC<span>Factory Inspection</span></div>
-        <div>PDF<span>Catalog Download</span></div>
+        <article class="quality-card">
+          <div class="quality-image"><img src="assets/certifications/ce.png" alt="APPACS CE declaration of conformity certificate"  decoding="async"  loading="lazy" /></div>
+          <div class="quality-copy"><strong>CE</strong><span>Declaration of conformity for USB cable export and compliance-ready product documentation.</span></div>
+        </article>
+        <article class="quality-card">
+          <div class="quality-image"><img src="assets/certifications/rohs.png" alt="APPACS RoHS test report certificate"  decoding="async"  loading="lazy" /></div>
+          <div class="quality-copy"><strong>RoHS</strong><span>Material compliance testing support for USB cable components and export buyer requirements.</span></div>
+        </article>
+        <article class="quality-card">
+          <div class="quality-image"><img src="assets/certifications/pahs.png" alt="APPACS PaHS SGS test report certificate"  decoding="async"  loading="lazy" /></div>
+          <div class="quality-copy"><strong>PaHS</strong><span>SGS test report reference for restricted substance control in cable materials.</span></div>
+        </article>
+        <article class="quality-card">
+          <div class="quality-image"><img src="assets/certifications/iso9001.png" alt="APPACS ISO9001 quality management system certificate"  decoding="async"  loading="lazy" /></div>
+          <div class="quality-copy"><strong>ISO9001</strong><span>Quality management system certification for repeatable production and inspection workflow.</span></div>
+        </article>
       </div>
     </section>
 
@@ -977,9 +1486,21 @@
         <div>
           <h2>FAQ</h2>
           <div class="faq-list">
-            <article class="faq-card"><h3>Can APPACS support OEM and ODM cable projects?</h3><p>Yes. Custom logo, cable length, package and connector configuration should be highlighted.</p></article>
-            <article class="faq-card"><h3>What details are needed for a quote?</h3><p>Country, product type, quantity, packaging requirement and WhatsApp or email.</p></article>
-            <article class="faq-card"><h3>Which pages should be built first?</h3><p>Home, Products, product detail templates, About/Factory, Contact, FAQ and priority SEO landing pages.</p></article>
+            <a class="faq-card" href="appacs-faq.html#company">
+              <h3>Are you a manufacturer or trading company?</h3>
+              <p>APPACS is a professional USB cable manufacturer focused on OEM and ODM supply for global brands, importers, distributors and wholesalers.</p>
+              <span>View full FAQ</span>
+            </a>
+            <a class="faq-card" href="appacs-faq.html#customization">
+              <h3>Do you provide OEM and ODM services?</h3>
+              <p>Yes. APPACS supports cable length, connector, logo, packaging, color, material and private label customization for B2B projects.</p>
+              <span>View full FAQ</span>
+            </a>
+            <a class="faq-card" href="appacs-faq.html#quotation">
+              <h3>How can I get a quotation?</h3>
+              <p>Please send cable type, quantity, target market and custom requirements. The sales team can respond with matching product direction and pricing.</p>
+              <span>Go to FAQ page</span>
+            </a>
           </div>
         </div>
         <div>
@@ -1003,11 +1524,31 @@
       <div><strong>APPACS</strong><p>OEM/ODM USB cable and fast charging cable manufacturer for global B2B buyers.</p></div>
       <div><strong>Products</strong><p><a href="appacs-usb-c-cables.html">USB-C Cables</a></p><p><a href="appacs-lightning-cables.html">Lightning Cables</a></p><p><a href="appacs-adapter-cables.html">Adapter Cables</a></p><p><a href="appacs-multi-function-cables.html">Multi-function Cables</a></p></div>
       <div><strong>Solutions</strong><p>OEM/ODM</p><p>Private Label</p><p>Promotional Gifts</p></div>
-      <div><strong>Company</strong><p>About APPACS</p><p>Factory</p><p>Blog</p></div>
+      <div><strong>Company</strong><p>About APPACS</p><p>Factory</p><p><a href="appacs-blog.html">Blog</a></p><p><a href="appacs-faq.html">FAQ</a></p></div>
       <div><strong>Contact</strong><p>sales2@szappacs.com</p><p>WhatsApp +86 159 2002 6822</p><p>Shenzhen, China</p></div>
     </div>
   </footer>
   <script>
+    (() => {
+      const video = document.querySelector(".hero-video");
+      if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const source = video.querySelector("source[data-src]");
+      if (!source) return;
+
+      const loadHeroVideo = () => {
+        if (source.src) return;
+        source.src = source.dataset.src;
+        video.load();
+        video.play().catch(() => {});
+      };
+
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadHeroVideo, { timeout: 1800 });
+      } else {
+        window.setTimeout(loadHeroVideo, 900);
+      }
+    })();
+
     (() => {
       const counters = document.querySelectorAll(".counter");
       const aboutSection = document.querySelector("#about-appacs");
@@ -1066,5 +1607,113 @@
       <path d="M16.02 3.2c-6.99 0-12.66 5.66-12.66 12.63 0 2.23.58 4.41 1.69 6.33L3.2 28.8l6.81-1.79a12.72 12.72 0 0 0 6 1.53h.01c6.99 0 12.68-5.66 12.68-12.64 0-3.38-1.32-6.55-3.71-8.94a12.58 12.58 0 0 0-8.97-3.76zm0 23.21h-.01a10.55 10.55 0 0 1-5.37-1.47l-.39-.23-4.04 1.06 1.08-3.94-.26-.4a10.46 10.46 0 0 1-1.62-5.6c0-5.78 4.72-10.49 10.54-10.49 2.81 0 5.45 1.09 7.43 3.06a10.42 10.42 0 0 1 3.08 7.43c0 5.79-4.73 10.5-10.44 10.5z"></path>
     </svg>
   </a>
+<script>
+(() => {
+  const LANGS = ["en", "es", "ru", "ar", "fr", "pt"];
+  const LABELS = {
+    en: "EN",
+    es: "ES",
+    ru: "RU",
+    ar: "AR",
+    fr: "FR",
+    pt: "PT"
+  };
+
+  function detectCurrentLang() {
+    const current = new URL(window.location.href);
+    const queryLang = current.searchParams.get("lang");
+    if (queryLang && LANGS.includes(queryLang)) return queryLang;
+
+    const segments = current.pathname.split("/").filter(Boolean);
+    if (!segments.length) return "en";
+
+    const first = segments[0].toLowerCase();
+    const last = segments[segments.length - 1].toLowerCase();
+
+    if (LANGS.includes(first)) return first;
+    if (LANGS.includes(last)) return last;
+
+    return "en";
+  }
+
+  function buildLocalizedUrl(targetLang) {
+    const current = new URL(window.location.href);
+    const protocol = current.protocol;
+    const path = current.pathname;
+
+    if (protocol === "file:" || /\.html$/i.test(path)) {
+      current.searchParams.set("lang", targetLang);
+      return current.toString();
+    }
+
+    const segments = path.split("/").filter(Boolean);
+    if (!segments.length) {
+      return `${current.origin}/${targetLang}/${current.search}${current.hash}`;
+    }
+
+    const first = segments[0] ? segments[0].toLowerCase() : "";
+    const lastIndex = segments.length - 1;
+    const last = segments[lastIndex] ? segments[lastIndex].toLowerCase() : "";
+
+    if (LANGS.includes(first)) {
+      segments[0] = targetLang;
+    } else if (LANGS.includes(last)) {
+      segments[lastIndex] = targetLang;
+    } else {
+      segments.push(targetLang);
+    }
+
+    return `${current.origin}/${segments.join("/")}${current.search}${current.hash}`;
+  }
+
+  const currentLang = detectCurrentLang();
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-language-switcher]").forEach((switcher) => {
+    const button = switcher.querySelector(".lang-toggle");
+    const currentLabel = switcher.querySelector(".lang-current");
+    const links = switcher.querySelectorAll(".lang-item");
+
+    if (currentLabel) currentLabel.textContent = LABELS[currentLang] || "EN";
+
+    links.forEach((link) => {
+      const lang = link.getAttribute("data-lang");
+      if (!lang) return;
+      link.href = buildLocalizedUrl(lang);
+      if (lang === currentLang) {
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "true");
+      }
+      link.addEventListener("click", () => {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    button.addEventListener("click", () => {
+      const open = switcher.classList.toggle("open");
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!switcher.contains(event.target)) {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
+
+
+

@@ -94,6 +94,130 @@
       background: rgba(255, 255, 255, 0.09);
       color: #fff;
     }
+    .lang-switcher {
+      position: relative;
+      flex-shrink: 0;
+      z-index: 40;
+    }
+    .lang-toggle {
+      min-width: 52px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.92);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+      backdrop-filter: blur(10px);
+    }
+    .lang-toggle:hover,
+    .lang-switcher.open .lang-toggle {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border-color: rgba(48,228,127,.42);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.18);
+    }
+    .lang-globe {
+      font-size: 15px;
+      line-height: 1;
+    }
+    .lang-current {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 214px;
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background: rgba(8,16,13,.94);
+      box-shadow: 0 24px 58px rgba(0,0,0,.32);
+      backdrop-filter: blur(20px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+    .lang-menu::before {
+      content: "";
+      position: absolute;
+      top: -18px;
+      right: 0;
+      width: 100%;
+      height: 18px;
+    }
+    .lang-switcher.open .lang-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      color: rgba(255,255,255,.86);
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .lang-item small {
+      color: rgba(255,255,255,.44);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-item:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      transform: translateX(2px);
+    }
+    .lang-item.is-active {
+      background: rgba(25,184,90,.18);
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(48,228,127,.28);
+    }
+    .lang-item.is-active small {
+      color: var(--green-2, #30e47f);
+    }
+    html[dir="rtl"] .lang-menu {
+      right: auto;
+      left: 0;
+    }
+    html[dir="rtl"] .lang-item:hover {
+      transform: translateX(-2px);
+    }
+    @media (max-width: 900px) {
+      .lang-toggle {
+        width: 42px;
+        min-width: 42px;
+        padding: 0;
+      }
+      .lang-current {
+        display: none;
+      }
+      .lang-menu {
+        min-width: min(220px, calc(100vw - 32px));
+      }
+    }
 
     .quote {
       padding: 13px 21px;
@@ -116,7 +240,7 @@
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 34px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .eyebrow {
@@ -149,6 +273,24 @@
       line-height: 1.7;
     }
 
+    .contact-copy {
+      max-width: 420px;
+    }
+
+    .contact-copy h1 {
+      max-width: 390px;
+      font-size: 31px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-copy p {
+      max-width: 400px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+
     .hero-points {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -166,6 +308,20 @@
       font-weight: 700;
     }
 
+    .contact-copy .hero-points {
+      max-width: 420px;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .contact-copy .hero-points div {
+      padding: 9px 11px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 750;
+    }
+
     .panel,
     .info-card {
       border-radius: 24px;
@@ -179,9 +335,21 @@
       padding: 30px;
     }
 
+    #inquiry-form {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+    }
+
     .panel h2 {
       margin: 0 0 8px;
       font-size: 32px;
+    }
+
+    #inquiry-form h2 {
+      margin-bottom: 18px;
+      font-size: 31px;
+      line-height: 1.08;
     }
 
     .panel-intro {
@@ -196,9 +364,19 @@
       gap: 16px;
     }
 
+    #appacsInquiryForm {
+      flex: 1;
+      align-content: start;
+      gap: 12px 16px;
+    }
+
     .field {
       display: grid;
       gap: 8px;
+    }
+
+    #inquiry-form .field {
+      gap: 6px;
     }
 
     .field.full {
@@ -233,6 +411,13 @@
       transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
+    #inquiry-form input,
+    #inquiry-form textarea,
+    #inquiry-form select {
+      padding: 12px 14px;
+      min-height: 56px;
+    }
+
     input::placeholder,
     textarea::placeholder {
       color: rgba(255, 255, 255, 0.42);
@@ -252,10 +437,18 @@
       resize: vertical;
     }
 
+    #inquiry-form textarea {
+      min-height: 134px;
+    }
+
     .hint {
       font-size: 12px;
       color: rgba(255, 255, 255, 0.52);
       min-height: 16px;
+    }
+
+    #inquiry-form .hint {
+      line-height: 1.35;
     }
 
     .hint.error {
@@ -268,7 +461,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 14px;
-      margin-top: 4px;
+      margin-top: 8px;
     }
 
     .status {
@@ -344,12 +537,14 @@
     }
 
     .quote-tips {
-      margin-top: 72px;
+      margin-top: 28px;
+      margin-bottom: 18px;
     }
 
     .map-card {
       overflow: hidden;
       padding: 0;
+      margin-top: 0;
     }
 
     .map-frame {
@@ -469,6 +664,19 @@
         font-size: 42px;
       }
 
+      .contact-copy h1 {
+        font-size: 34px;
+      }
+
+      .contact-copy {
+        max-width: none;
+      }
+
+      .contact-copy p,
+      .contact-copy .hero-points {
+        max-width: none;
+      }
+
       .hero-points {
         grid-template-columns: 1fr;
       }
@@ -486,7 +694,7 @@
 <body>
   <header class="nav">
     <a class="brand" href="appacs-homepage-long-preview.html">
-      <img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo" />
+      <img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo"  decoding="async"  fetchpriority="high" />
       APPACS
     </a>
     <nav class="nav-links">
@@ -494,27 +702,30 @@
       <a href="appacs-homepage-long-preview.html#solutions">OEM/ODM</a>
       <a href="appacs-homepage-long-preview.html#factory">Factory</a>
       <a href="appacs-blog.html">Blog</a>
-      <a href="appacs-contact.html">Contact</a>
+      <a href="appacs-faq.html">FAQ</a><a href="appacs-contact.html">Contact</a>
     </nav>
+            <div class="lang-switcher" data-language-switcher>
+      <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+        <span class="lang-globe" aria-hidden="true">&#127760;</span>
+        <span class="lang-current">EN</span>
+      </button>
+      <div class="lang-menu" role="menu" aria-label="Language selector">
+        <a class="lang-item" data-lang="en" href="/en/" role="menuitem"><span>English</span><small>EN</small></a>
+        <a class="lang-item" data-lang="es" href="/es/" role="menuitem"><span>Espa&ntilde;ol</span><small>ES</small></a>
+        <a class="lang-item" data-lang="ru" href="/ru/" role="menuitem"><span>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span><small>RU</small></a>
+        <a class="lang-item" data-lang="ar" href="/ar/" role="menuitem"><span>&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span><small>AR</small></a>
+        <a class="lang-item" data-lang="fr" href="/fr/" role="menuitem"><span>Fran&ccedil;ais</span><small>FR</small></a>
+        <a class="lang-item" data-lang="pt" href="/pt/" role="menuitem"><span>Portugu&ecirc;s</span><small>PT</small></a>
+      </div>
+    </div>
     <a class="quote" href="#inquiry-form">Contact APPACS</a>
   </header>
 
   <main class="hero">
     <div class="hero-inner">
-      <section>
+      <section class="contact-copy">
         <span class="eyebrow">Contact APPACS</span>
         <h1>Contact APPACS for USB Cable Projects</h1>
-        <p>
-          Reach APPACS for OEM/ODM cooperation, catalog requests, factory communication and project discussions.
-          This contact page combines your inquiry form with company location details for global buyers.
-        </p>
-        <div class="hero-points">
-          <div>Direct contact for wholesale and OEM/ODM requests</div>
-          <div>Clear fields for quantity, market and product direction</div>
-          <div>Company address and map for easier buyer verification</div>
-          <div>Email and phone validation for better lead quality</div>
-        </div>
-
         <div class="info-card quote-tips">
           <h3>Recommended for Faster Quotation</h3>
           <ul>
@@ -524,15 +735,37 @@
             <li>Destination market and expected delivery timeline</li>
           </ul>
         </div>
+        <div class="info-card map-card">
+          <div class="map-frame">
+            <iframe
+              title="APPACS company location map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=114.0179%2C22.6065%2C114.0319%2C22.6198&amp;layer=mapnik&amp;marker=22.6129%2C114.0249"
+            ></iframe>
+            <div class="map-overlay">
+              <div>
+                <strong>APPACS Location</strong>
+                <span>Longhua Design Industry Park, Shenzhen</span>
+              </div>
+              <a
+                class="map-link"
+                href="https://www.openstreetmap.org/?mlat=22.6129&amp;mlon=114.0249#map=16/22.6129/114.0249"
+                target="_blank"
+                rel="noreferrer"
+              >Open Map</a>
+            </div>
+          </div>
+          <div class="map-copy">
+            <h3>Company Address</h3>
+            <p>Building 1, Headquarters Building, Longhua Design Industry Park, Longhua District, Shenzhen, China</p>
+            <p>Map view uses OpenStreetMap and is placed around the Shenzhen North / Longhua business area for quick buyer reference.</p>
+          </div>
+        </div>
       </section>
 
       <section class="panel" id="inquiry-form">
         <h2>Contact Form</h2>
-        <p class="panel-intro">
-          Required fields are clearly marked. Fill in the core contact details first, then add company,
-          country and project notes if available.
-        </p>
-
         <form id="appacsInquiryForm" novalidate>
           <div class="field">
             <label for="name">Full Name <span class="required">Required</span></label>
@@ -583,11 +816,6 @@
 
           <input id="startedAt" name="startedAt" type="hidden" />
 
-          <div class="shield-note">
-            This form uses email validation, international phone validation, a hidden anti-spam field and a minimum fill-time check.
-            If you want stronger protection later, you can also add Cloudflare Turnstile or Google reCAPTCHA.
-          </div>
-
           <div class="form-footer">
             <button id="submitButton" type="submit">Send Inquiry</button>
             <div id="formStatus" class="status" role="status" aria-live="polite"></div>
@@ -595,35 +823,6 @@
         </form>
       </section>
 
-      <aside class="stack">
-        <div class="info-card map-card">
-          <div class="map-frame">
-            <iframe
-              title="APPACS company location map"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=114.0179%2C22.6065%2C114.0319%2C22.6198&amp;layer=mapnik&amp;marker=22.6129%2C114.0249"
-            ></iframe>
-            <div class="map-overlay">
-              <div>
-                <strong>APPACS Location</strong>
-                <span>Longhua Design Industry Park, Shenzhen</span>
-              </div>
-              <a
-                class="map-link"
-                href="https://www.openstreetmap.org/?mlat=22.6129&amp;mlon=114.0249#map=16/22.6129/114.0249"
-                target="_blank"
-                rel="noreferrer"
-              >Open Map</a>
-            </div>
-          </div>
-          <div class="map-copy">
-            <h3>Company Address</h3>
-            <p>Building 1, Headquarters Building, Longhua Design Industry Park, Longhua District, Shenzhen, China</p>
-            <p>Map view uses OpenStreetMap and is placed around the Shenzhen North / Longhua business area for quick buyer reference.</p>
-          </div>
-        </div>
-      </aside>
     </div>
   </main>
 
@@ -791,5 +990,113 @@
       }
     });
   </script>
+<script>
+(() => {
+  const LANGS = ["en", "es", "ru", "ar", "fr", "pt"];
+  const LABELS = {
+    en: "EN",
+    es: "ES",
+    ru: "RU",
+    ar: "AR",
+    fr: "FR",
+    pt: "PT"
+  };
+
+  function detectCurrentLang() {
+    const current = new URL(window.location.href);
+    const queryLang = current.searchParams.get("lang");
+    if (queryLang && LANGS.includes(queryLang)) return queryLang;
+
+    const segments = current.pathname.split("/").filter(Boolean);
+    if (!segments.length) return "en";
+
+    const first = segments[0].toLowerCase();
+    const last = segments[segments.length - 1].toLowerCase();
+
+    if (LANGS.includes(first)) return first;
+    if (LANGS.includes(last)) return last;
+
+    return "en";
+  }
+
+  function buildLocalizedUrl(targetLang) {
+    const current = new URL(window.location.href);
+    const protocol = current.protocol;
+    const path = current.pathname;
+
+    if (protocol === "file:" || /\.html$/i.test(path)) {
+      current.searchParams.set("lang", targetLang);
+      return current.toString();
+    }
+
+    const segments = path.split("/").filter(Boolean);
+    if (!segments.length) {
+      return `${current.origin}/${targetLang}/${current.search}${current.hash}`;
+    }
+
+    const first = segments[0] ? segments[0].toLowerCase() : "";
+    const lastIndex = segments.length - 1;
+    const last = segments[lastIndex] ? segments[lastIndex].toLowerCase() : "";
+
+    if (LANGS.includes(first)) {
+      segments[0] = targetLang;
+    } else if (LANGS.includes(last)) {
+      segments[lastIndex] = targetLang;
+    } else {
+      segments.push(targetLang);
+    }
+
+    return `${current.origin}/${segments.join("/")}${current.search}${current.hash}`;
+  }
+
+  const currentLang = detectCurrentLang();
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-language-switcher]").forEach((switcher) => {
+    const button = switcher.querySelector(".lang-toggle");
+    const currentLabel = switcher.querySelector(".lang-current");
+    const links = switcher.querySelectorAll(".lang-item");
+
+    if (currentLabel) currentLabel.textContent = LABELS[currentLang] || "EN";
+
+    links.forEach((link) => {
+      const lang = link.getAttribute("data-lang");
+      if (!lang) return;
+      link.href = buildLocalizedUrl(lang);
+      if (lang === currentLang) {
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "true");
+      }
+      link.addEventListener("click", () => {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    button.addEventListener("click", () => {
+      const open = switcher.classList.toggle("open");
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!switcher.contains(event.target)) {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
+
+
+

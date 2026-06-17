@@ -163,10 +163,7 @@ export function AppacsInquiryForm({
         backdropFilter: "blur(18px) saturate(140%)"
       }}
     >
-      <h2 style={{ margin: 0, fontSize: 32 }}>Inquiry Form</h2>
-      <p style={{ margin: "8px 0 24px", color: "rgba(238,248,242,.68)", lineHeight: 1.7 }}>
-        Share your OEM/ODM USB cable project details. Required fields are clearly marked and validated.
-      </p>
+      <h2 style={{ margin: "0 0 18px", fontSize: 32 }}>Inquiry Form</h2>
 
       <form
         onSubmit={handleSubmit}

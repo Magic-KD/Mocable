@@ -1,11 +1,15 @@
 .env
 .env*.local
+.env.local
 node_modules/
 .next/
 out/
 dist/
 build/
 public/outputs/
+deploy-file-list.txt
+work/
+appacs-next-home/
 *.log
 .DS_Store
 Thumbs.db

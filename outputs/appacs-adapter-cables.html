@@ -62,17 +62,349 @@
       color: rgba(255,255,255,.78);
       font-size: 14px;
     }
-    .nav-links > a {
+    .nav-links > a,
+    .menu-trigger {
       height: 42px;
       display: inline-flex;
       align-items: center;
+      gap: 6px;
       padding: 0 13px;
       border-radius: 999px;
+      transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
     .nav-links > a:hover,
-    .nav-links > a.active {
-      background: rgba(255,255,255,.09);
+    .menu-item:hover .menu-trigger {
+      background: rgba(255,255,255,.12);
       color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.14);
+    }
+    .nav-links > a.active,
+    .menu-trigger.active {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+    }
+    .menu-item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .menu-item::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 28px;
+      pointer-events: none;
+    }
+    .menu-item:hover::after,
+    .menu-item:focus-within::after {
+      pointer-events: auto;
+    }
+    .menu-trigger::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      opacity: .8;
+    }
+    .mega-menu {
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 14px);
+      width: min(1040px, calc(100vw - 64px));
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr .95fr .9fr;
+      gap: 22px;
+      padding: 24px;
+      background: rgba(255,255,255,.9);
+      color: #0c1511;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 20px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.24);
+      backdrop-filter: blur(22px) saturate(150%);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, 8px);
+      pointer-events: none;
+      z-index: 30;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+    .mega-menu::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -28px;
+      height: 28px;
+    }
+    .menu-item:hover .mega-menu,
+    .menu-item:focus-within .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+      pointer-events: auto;
+    }
+    .mega-menu h4 {
+      margin: 0 0 14px;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #66746d;
+    }
+    .mega-list {
+      display: grid;
+      gap: 10px;
+    }
+    .mega-link {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 13px;
+      align-items: center;
+      padding: 11px 38px 11px 11px;
+      border-radius: 16px;
+      position: relative;
+      border: 1px solid rgba(16, 45, 28, .08);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(245,249,247,.94));
+      transition: background .18s ease, transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .mega-link:hover {
+      background: linear-gradient(180deg, #f4fbf7, #edf7f1);
+      border-color: rgba(25, 184, 90, .28);
+      transform: translateX(3px);
+      box-shadow: 0 10px 26px rgba(7, 20, 13, .08), inset 3px 0 0 #19b85a;
+    }
+    .mega-link::after {
+      content: ">";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      color: #0a9f48;
+      font-weight: 900;
+      opacity: 0;
+      transform: translate(-4px, -50%);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    .mega-link:hover::after {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+    .mega-icon,
+    .mega-thumb {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .mega-icon {
+      color: #0a9f48;
+      background:
+        radial-gradient(circle at top, rgba(37, 214, 108, .22), transparent 60%),
+        linear-gradient(180deg, #eef9f2, #dcf3e5);
+      border: 1px solid #c6efd5;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .mega-thumb {
+      position: relative;
+      border: 1px solid rgba(18, 59, 37, .12);
+      background: #e8efea;
+      box-shadow: 0 8px 18px rgba(9, 18, 14, .08);
+    }
+    .mega-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mega-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 17, 13, .05), rgba(7, 17, 13, .28));
+    }
+    .mega-thumb b {
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      z-index: 1;
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: rgba(7, 17, 13, .72);
+      color: #f6fff8;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .mega-copy {
+      min-width: 0;
+    }
+    .mega-link strong {
+      display: block;
+      font-size: 14px;
+    }
+    .mega-copy span {
+      display: block;
+      margin-top: 3px;
+      color: #69756f;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .mega-feature {
+      min-height: 100%;
+      padding: 18px;
+      border-radius: 16px;
+      background:
+        linear-gradient(160deg, rgba(7,17,13,.88), rgba(16,93,50,.78)),
+        url("../appacs-next-home/public/assets/u87d-display.jpg") center/cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .mega-feature strong {
+      font-size: 22px;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    .mega-feature span {
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .lang-switcher {
+      position: relative;
+      flex-shrink: 0;
+      z-index: 40;
+    }
+    .lang-toggle {
+      min-width: 52px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.92);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+      backdrop-filter: blur(10px);
+    }
+    .lang-toggle:hover,
+    .lang-switcher.open .lang-toggle {
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      border-color: rgba(48,228,127,.42);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.18);
+    }
+    .lang-globe {
+      font-size: 15px;
+      line-height: 1;
+    }
+    .lang-current {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 214px;
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background: rgba(8,16,13,.94);
+      box-shadow: 0 24px 58px rgba(0,0,0,.32);
+      backdrop-filter: blur(20px) saturate(140%);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    }
+    .lang-menu::before {
+      content: "";
+      position: absolute;
+      top: -18px;
+      right: 0;
+      width: 100%;
+      height: 18px;
+    }
+    .lang-switcher.open .lang-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      color: rgba(255,255,255,.86);
+      transition: background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .lang-item small {
+      color: rgba(255,255,255,.44);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lang-item:hover {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      transform: translateX(2px);
+    }
+    .lang-item.is-active {
+      background: rgba(25,184,90,.18);
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(48,228,127,.28);
+    }
+    .lang-item.is-active small {
+      color: var(--green-2, #30e47f);
+    }
+    html[dir="rtl"] .lang-menu {
+      right: auto;
+      left: 0;
+    }
+    html[dir="rtl"] .lang-item:hover {
+      transform: translateX(-2px);
+    }
+    @media (max-width: 900px) {
+      .lang-toggle {
+        width: 42px;
+        min-width: 42px;
+        padding: 0;
+      }
+      .lang-current {
+        display: none;
+      }
+      .lang-menu {
+        min-width: min(220px, calc(100vw - 32px));
+      }
     }
     .quote {
       padding: 13px 21px;
@@ -572,14 +904,61 @@
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="appacs-homepage-long-preview.html"><img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo" />APPACS</a>
+    <a class="brand" href="appacs-homepage-long-preview.html"><img src="../appacs-next-home/public/assets/company-logo.jpg" alt="APPACS logo"  decoding="async"  fetchpriority="high" />APPACS</a>
     <nav class="nav-links">
-      <a class="active" href="appacs-adapter-cables.html">Products</a>
+      <div class="menu-item">
+        <a class="menu-trigger active" href="appacs-homepage-long-preview.html#products">Products</a>
+        <div class="mega-menu" aria-label="Products mega menu">
+          <div>
+            <h4>Cable Categories</h4>
+            <div class="mega-list">
+              <a class="mega-link" href="appacs-usb-c-cables.html"><span class="mega-thumb"><b>USB-C</b><img src="assets/categories/usb-c-cables.jpg" alt="USB-C cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>USB-C Cables</strong><span>Fast charging and data cables for mainstream Type-C devices</span></span></a>
+              <a class="mega-link" href="appacs-lightning-cables.html"><span class="mega-thumb"><b>Apple</b><img src="assets/categories/lightning-cables.jpg" alt="Lightning cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Lightning Cables</strong><span>USB-A to Lightning and USB-C to Lightning options</span></span></a>
+              <a class="mega-link" href="appacs-multi-function-cables.html"><span class="mega-thumb"><b>3-in-1</b><img src="assets/categories/multi-function-cables.jpg" alt="Multi-function cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Multi-function Cables</strong><span>3-in-1 and multi-connector charging cables for retail and OEM/ODM projects</span></span></a>
+              <a class="mega-link" href="appacs-adapter-cables.html"><span class="mega-thumb"><b>Audio</b><img src="assets/categories/adapter-cables.jpg" alt="Adapter cable category"  decoding="async"  loading="lazy" /></span><span class="mega-copy"><strong>Adapter Cables</strong><span>Multi-connector and conversion cables for travel, retail and gifts</span></span></a>
+            </div>
+          </div>
+          <div>
+            <h4>Featured Products</h4>
+            <div class="mega-list">
+              <a class="mega-link" href="appacs-product-u87-cw100w-watch-charging-cable.html"><span class="mega-icon">W</span><span class="mega-copy"><strong>Watch Charging Cable</strong><span>Travel-ready cable with watch charger</span></span></a>
+              <a class="mega-link" href="appacs-product-u87d-led-display-cable.html"><span class="mega-icon">D</span><span class="mega-copy"><strong>LED Display Cable</strong><span>Real-time wattage display for premium SKUs</span></span></a>
+              <a class="mega-link" href="appacs-inquiry-form.html"><span class="mega-icon">P</span><span class="mega-copy"><strong>Private Label Cable</strong><span>Logo, color, length and retail packaging</span></span></a>
+            </div>
+          </div>
+          <div>
+            <h4>OEM/ODM Services</h4>
+            <div class="mega-list">
+              <a class="mega-link" href="appacs-homepage-long-preview.html#solutions"><span class="mega-icon">O</span><span class="mega-copy"><strong>Custom Project</strong><span>Sample, MOQ, packaging and quotation flow</span></span></a>
+              <a class="mega-link" href="appacs-homepage-long-preview.html#factory"><span class="mega-icon">Q</span><span class="mega-copy"><strong>Quality Control</strong><span>Factory proof, inspection and shipment support</span></span></a>
+              <a class="mega-link" href="appacs-inquiry-form.html"><span class="mega-icon">G</span><span class="mega-copy"><strong>Buyer Guides</strong><span>Procurement questions and catalog request support</span></span></a>
+            </div>
+          </div>
+          <a class="mega-feature" href="appacs-inquiry-form.html">
+            <strong>Need a custom cable quote?</strong>
+            <span>Send connector, wattage, quantity and packaging requirements.</span>
+          </a>
+        </div>
+      </div>
       <a href="appacs-homepage-long-preview.html#solutions">OEM/ODM</a>
       <a href="appacs-homepage-long-preview.html#factory">Factory</a>
       <a href="appacs-blog.html">Blog</a>
-      <a href="appacs-contact.html">Contact</a>
+      <a href="appacs-faq.html">FAQ</a><a href="appacs-contact.html">Contact</a>
     </nav>
+            <div class="lang-switcher" data-language-switcher>
+      <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+        <span class="lang-globe" aria-hidden="true">&#127760;</span>
+        <span class="lang-current">EN</span>
+      </button>
+      <div class="lang-menu" role="menu" aria-label="Language selector">
+        <a class="lang-item" data-lang="en" href="/en/" role="menuitem"><span>English</span><small>EN</small></a>
+        <a class="lang-item" data-lang="es" href="/es/" role="menuitem"><span>Espa&ntilde;ol</span><small>ES</small></a>
+        <a class="lang-item" data-lang="ru" href="/ru/" role="menuitem"><span>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span><small>RU</small></a>
+        <a class="lang-item" data-lang="ar" href="/ar/" role="menuitem"><span>&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span><small>AR</small></a>
+        <a class="lang-item" data-lang="fr" href="/fr/" role="menuitem"><span>Fran&ccedil;ais</span><small>FR</small></a>
+        <a class="lang-item" data-lang="pt" href="/pt/" role="menuitem"><span>Portugu&ecirc;s</span><small>PT</small></a>
+      </div>
+    </div>
     <a class="quote" href="appacs-inquiry-form.html">Get a Quote</a>
   </header>
 
@@ -664,7 +1043,7 @@
 
       <div class="product-grid">
         <article class="product-card">
-          <div class="media"><img src="assets/products/u93-usb-c-audio-adapter-cable/main-1.jpg" alt="U93 USB-C audio adapter cable" /></div>
+          <div class="media"><img src="assets/products/u93-usb-c-audio-adapter-cable/main-1.jpg" alt="U93 USB-C audio adapter cable"  decoding="async"  loading="lazy" /></div>
           <div class="product-copy">
             <span class="mini">Mainstream SKU</span>
             <h3>U93 USB-C Audio Adapter Cable</h3>
@@ -675,7 +1054,7 @@
         </article>
 
         <article class="product-card">
-          <div class="media"><img src="assets/products/u87m-magnetic-charging-cable/main-1.jpg" alt="U87M magnetic charging cable" /></div>
+          <div class="media"><img src="assets/products/u87m-magnetic-charging-cable/main-1.jpg" alt="U87M magnetic charging cable"  decoding="async"  loading="lazy" /></div>
           <div class="product-copy">
             <span class="mini">Magnetic Option</span>
             <h3>U87M Magnetic Charging Cable</h3>
@@ -720,8 +1099,8 @@
   <section>
     <div class="wrap split-band">
       <div class="showcase">
-        <img src="assets/adapter-category/u93-adapter-2.jpg" alt="Adapter cable product shot" />
-        <img src="assets/adapter-category/u87-cc-adapter.png" alt="Magnetic adapter product shot" />
+        <img src="assets/adapter-category/u93-adapter-2.jpg" alt="Adapter cable product shot"  decoding="async"  loading="lazy" />
+        <img src="assets/adapter-category/u87-cc-adapter.jpg" alt="Magnetic adapter product shot"  decoding="async"  loading="lazy" />
       </div>
       <div class="quote-panel">
         <h3>Need an Adapter Cable Quotation?</h3>
@@ -799,7 +1178,7 @@
     </div>
     <div>
       <strong>Resources</strong>
-      <p><a href="appacs-blog.html">Blog</a></p>
+      <p><a href="appacs-blog.html">Blog</a></p><p><a href="appacs-faq.html">FAQ</a></p>
       <p><a href="appacs-homepage-long-preview.html#factory">Factory</a></p>
       <p><a href="appacs-homepage-long-preview.html#solutions">OEM/ODM</a></p>
     </div>
@@ -810,5 +1189,113 @@
       <p>Shenzhen, China</p>
     </div>
   </footer>
+<script>
+(() => {
+  const LANGS = ["en", "es", "ru", "ar", "fr", "pt"];
+  const LABELS = {
+    en: "EN",
+    es: "ES",
+    ru: "RU",
+    ar: "AR",
+    fr: "FR",
+    pt: "PT"
+  };
+
+  function detectCurrentLang() {
+    const current = new URL(window.location.href);
+    const queryLang = current.searchParams.get("lang");
+    if (queryLang && LANGS.includes(queryLang)) return queryLang;
+
+    const segments = current.pathname.split("/").filter(Boolean);
+    if (!segments.length) return "en";
+
+    const first = segments[0].toLowerCase();
+    const last = segments[segments.length - 1].toLowerCase();
+
+    if (LANGS.includes(first)) return first;
+    if (LANGS.includes(last)) return last;
+
+    return "en";
+  }
+
+  function buildLocalizedUrl(targetLang) {
+    const current = new URL(window.location.href);
+    const protocol = current.protocol;
+    const path = current.pathname;
+
+    if (protocol === "file:" || /\.html$/i.test(path)) {
+      current.searchParams.set("lang", targetLang);
+      return current.toString();
+    }
+
+    const segments = path.split("/").filter(Boolean);
+    if (!segments.length) {
+      return `${current.origin}/${targetLang}/${current.search}${current.hash}`;
+    }
+
+    const first = segments[0] ? segments[0].toLowerCase() : "";
+    const lastIndex = segments.length - 1;
+    const last = segments[lastIndex] ? segments[lastIndex].toLowerCase() : "";
+
+    if (LANGS.includes(first)) {
+      segments[0] = targetLang;
+    } else if (LANGS.includes(last)) {
+      segments[lastIndex] = targetLang;
+    } else {
+      segments.push(targetLang);
+    }
+
+    return `${current.origin}/${segments.join("/")}${current.search}${current.hash}`;
+  }
+
+  const currentLang = detectCurrentLang();
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-language-switcher]").forEach((switcher) => {
+    const button = switcher.querySelector(".lang-toggle");
+    const currentLabel = switcher.querySelector(".lang-current");
+    const links = switcher.querySelectorAll(".lang-item");
+
+    if (currentLabel) currentLabel.textContent = LABELS[currentLang] || "EN";
+
+    links.forEach((link) => {
+      const lang = link.getAttribute("data-lang");
+      if (!lang) return;
+      link.href = buildLocalizedUrl(lang);
+      if (lang === currentLang) {
+        link.classList.add("is-active");
+        link.setAttribute("aria-current", "true");
+      }
+      link.addEventListener("click", () => {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    button.addEventListener("click", () => {
+      const open = switcher.classList.toggle("open");
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!switcher.contains(event.target)) {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        switcher.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
+
+
+
