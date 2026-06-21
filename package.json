@@ -1,9 +1,11 @@
 {
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/sync-public-outputs.mjs",
+    "prebuild": "node scripts/validate-static-assets.mjs && node scripts/sync-public-outputs.mjs",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "verify:production": "node scripts/verify-production.mjs",
+    "check:deploy": "npm run build && npm run verify:production"
   },
   "dependencies": {
     "next": "latest",

@@ -39,6 +39,11 @@ function rewriteHrefValue(href, lang) {
   }
 
   const [base, hash = ""] = href.split("#");
+
+  if (base === "appacs-inquiry-form.html") {
+    return `${localizedPath(lang, "contact")}#quote`;
+  }
+
   const targetSlug = fileSlugMap[base];
 
   if (targetSlug !== undefined) {
@@ -59,11 +64,11 @@ const fileSlugMap = {
     "blog/oem-odm-usb-cable-customization-guide",
   "appacs-contact.html": "contact",
   "appacs-faq.html": "faq",
-  "appacs-inquiry-form.html": "inquiry",
-  "appacs-usb-c-cables.html": "products/usb-c-cables",
-  "appacs-lightning-cables.html": "products/lightning-cables",
-  "appacs-adapter-cables.html": "products/adapter-cables",
-  "appacs-multi-function-cables.html": "products/multi-function-cables",
+  "appacs-inquiry-form.html": "contact",
+  "appacs-usb-c-cables.html": "usb-c-cables",
+  "appacs-lightning-cables.html": "lightning-cables",
+  "appacs-adapter-cables.html": "adapter-cables",
+  "appacs-multi-function-cables.html": "multi-function-cables",
   "appacs-product-detail-template.html": "products/u87-3in1",
   "appacs-product-u11-lightning-black.html": "products/u11-lightning-black",
   "appacs-product-u11-lightning-white.html": "products/u11-lightning-white",
@@ -133,8 +138,8 @@ function rewriteHtml(html, lang, slug) {
   );
 
   output = output.replace(
-    /\.\.\/appacs-next-home\/public\/assets\/company-logo\.jpg/g,
-    "/outputs/assets/company-logo.jpg"
+    /\.\.\/appacs-next-home\/public\/assets\//g,
+    "/outputs/assets/"
   );
 
   output = output.replace(
@@ -157,12 +162,20 @@ function rewriteHtml(html, lang, slug) {
     return `href=${quote}${rewritten}${quote}`;
   });
 
+  if (slug === "contact" && !/\bid="quote"/i.test(output)) {
+    output = output.replace(
+      /(<section\b[^>]*\bid="inquiry-form"[^>]*>)/i,
+      `<span id="quote" aria-hidden="true"></span>$1`
+    );
+  }
+
   return output;
 }
 
 export async function GET(_request, { params }) {
-  const lang = normalizeLanguage(params.lang);
-  const slug = normalizeSlug(params.slug);
+  const resolvedParams = await params;
+  const lang = normalizeLanguage(resolvedParams.lang);
+  const slug = normalizeSlug(resolvedParams.slug);
   const fileName = resolveFileForSlug(slug === "faqs" ? "faq" : slug);
 
   if (!fileName) {
